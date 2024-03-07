@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import mernProImg from "@/public/mernPro.png";
+import ecommersImg from "@/public/ecommers.png";
+import NewsportalImg from "@/public/newsportal.png";
 
 export const links = [
   {
@@ -35,52 +35,52 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Software Developer At Supreme It Solutions",
+    location: "Kathmandu",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I worked as a Software Developerfor 6 Months.I also upskilled to the full stack.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2023",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Freelance ",
+    location: "Kathmandu",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I worked as freelance for 4 months.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2022 - 2023",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Intern",
+    location: "Kathmandu",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "Gained hands-on experience in software development life processes, including design, coding, testing, anddebugging.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2022",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Real estate full stack project",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "Built a responsive real estate.Implemented user authentication, allowing seamless signup,Implemented pagination for efficient search result navigatio",
+    tags: ["React", "Node", "MongoDB", "Tailwind", "Firebase"],
+    imageUrl: mernProImg,
   },
   {
-    title: "rmtDev",
+    title: "Ecommers",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "created an e-commerce website with an admin dashboardutilizing Tailwind CSS, TypeScript, and Next.js to improve user experience and streamline online store management",
+    tags: ["React", "javascript", "Next.js", "Tailwind", "Redux"],
+    imageUrl: ecommersImg,
   },
   {
-    title: "Word Analytics",
+    title: "News Portal",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "Created a news portal with an admin dashboardutilizing React, Next.js, and Strapi to provide a seamless and efficient user experience with admin dashboard",
+    tags: ["React", "Next.js", "Strapi", "Tailwind", "Framer"],
+    imageUrl: NewsportalImg,
   },
 ] as const;
 
