@@ -20,7 +20,7 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
   Software Engineer with excellent problem-solving skills and ability to work in a team. Enthusiastic about learning new technologies and love to solve multidisciplinary problems. I have a passion for{" "}
-  <span className="font-medium">Accounting</span>, 
+  <span className="font-medium">CyberSecurity</span>, 
   programming. {" "}
   <span className="italic">My favorite part of programming</span> is the
   problem-solving aspect. I <span className="underline">love</span> the
