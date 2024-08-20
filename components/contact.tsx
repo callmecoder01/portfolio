@@ -1,15 +1,50 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event:any) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(event.target);
+    const data = {
+      senderEmail: formData.get("senderEmail"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch(
+        "https://my-portfolio-4dba8-default-rtdb.firebaseio.com/messages.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error('Failed to send message.');
+      }
+
+      toast.success("Email sent successfully!");
+      
+    } catch (error) {
+      toast.error("Failed to send email.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <motion.section
@@ -41,16 +76,7 @@ export default function Contact() {
 
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
-        }}
+        onSubmit={handleSubmit}
       >
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
@@ -67,7 +93,7 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+        <SubmitBtn  />
       </form>
     </motion.section>
   );
