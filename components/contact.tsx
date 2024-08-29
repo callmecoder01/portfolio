@@ -37,6 +37,8 @@ export default function Contact() {
         throw new Error('Failed to send message.');
       }
 
+      event.target.reset();
+
       toast.success("Email sent successfully!");
       
     } catch (error) {

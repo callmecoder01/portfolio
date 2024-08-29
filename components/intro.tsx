@@ -1,7 +1,8 @@
+// Intro.tsx
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -9,10 +10,23 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import Modal from "./modal"; // Adjust the path according to your file structure
 
-export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
+const Intro: React.FC = () => {
+  const { ref } = useSectionInView("Home", 0.9);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState<string>("");
+
+  const openModal = (imageSrc: string) => {
+    setModalImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImage("");
+  };
 
   return (
     <section
@@ -37,7 +51,9 @@ export default function Intro() {
               height="192"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-blue-900 shadow-xl"
+              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-blue-900 shadow-xl cursor-pointer"
+              onMouseEnter={() => openModal('/intro.jpg')}
+          
             />
           </motion.div>
 
@@ -65,8 +81,8 @@ export default function Intro() {
         <span className="font-bold">Hello, I'm Saroj.</span> I'm a{" "}
         <span className="font-bold">Software developer</span> with{" "}
         <span className="font-bold">1.5 years</span> of experience. I enjoy
-        building <span className="italic">sites,apps and APIs</span>. My focus is{" "}
-        <span className="underline">Node js, Express js , React js Next js , Django ,Rust</span>.
+        building <span className="italic">sites, apps, and APIs</span>. My focus is{" "}
+        <span className="underline">Node.js, Express.js, React.js, Next.js, Django, Rust</span>.
       </motion.h1>
 
       <motion.div
@@ -114,6 +130,10 @@ export default function Intro() {
           <FaGithubSquare />
         </a>
       </motion.div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal} imageSrc={modalImage} />
     </section>
   );
-}
+};
+
+export default Intro;
