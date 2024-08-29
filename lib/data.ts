@@ -35,28 +35,37 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Backend Developer At Silk-inovation",
+    location: "Kathmandu",
+    description:
+      "I worked as a Backend Developer UpSkill and gained hands-on experience in software development.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2024 Apr - Present",
+  },
+  {
     title: "Software Developer At Supreme It Solutions",
     location: "Kathmandu",
     description:
-      "I worked as a Software Developerfor 6 Months.I also upskilled to the full stack.",
+      "I worked as a Fullstack Developer And Gained hands-on experience in software developmen.",
     icon: React.createElement(LuGraduationCap),
-    date: "2023",
+    date: "Sep 2023 - Apr 2024",
+  },
+  
+  {
+    title: "Intern",
+    location: "Kathmandu",
+    description:
+      "Worked closely with a team of software engineers to create and implement software solutions.Got practical experience in all stages of software development, like designing, coding, testing, and fixing bugs.",
+    icon: React.createElement(FaReact),
+    date: "Jun 2023 - Aug 2022",
   },
   {
     title: "Freelance ",
     location: "Kathmandu",
     description:
-      "I worked as freelance for 4 months.",
+      "i worked as freelance developer. ",
     icon: React.createElement(CgWorkAlt),
-    date: "2022 - 2023",
-  },
-  {
-    title: "Intern",
-    location: "Kathmandu",
-    description:
-      "Gained hands-on experience in software development life processes, including design, coding, testing, anddebugging.",
-    icon: React.createElement(FaReact),
-    date: "2022",
+    date: "Dec 2022 - May 2023",
   },
 ] as const;
 
@@ -85,6 +94,8 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
+  "Express",
+  "Nest",
   "HTML",
   "CSS",
   "JavaScript",
@@ -93,6 +104,8 @@ export const skillsData = [
   "Next.js",
   "Node.js",
   "Git",
+  "GitHub",
+  "Docker",
   "Tailwind",
   "Prisma",
   "MongoDB",

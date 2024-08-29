@@ -19,20 +19,9 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-  Software Engineer with excellent problem-solving skills and ability to work in a team. Enthusiastic about learning new technologies and love to solve multidisciplinary problems. I have a passion for{" "}
-  <span className="font-medium">CyberSecurity</span>, 
-  programming. {" "}
-  <span className="italic">My favorite part of programming</span> is the
-  problem-solving aspect. I <span className="underline">love</span> the
-  feeling of finally figuring out a solution to a problem. My core stack
-  is{" "}
-  <span className="font-medium">
-    React, Next.js, Node.js, MongoDB , Postgresql
-  </span>
-  . I am also familiar with TypeScript and Prisma. I am always looking to
-  learn new technologies. I am currently looking for a{" "}
-  <span className="font-medium">full-time position</span> as a software
-  developer.
+  Bringing a strong track record in problem-solving and a keen curiosity for emerging technologies. My passion for learning drives me to stay on the cutting edge of the tech landscape, while my ability to collaborate effectively makes me a valuable team player. I thrive in environments where I can tackle multidisciplinary challenges and contribute innovative solutions. My core stack includes{" "}
+  <span className="font-medium">Express ,Nest ,React, Next.js, Node.js, MongoDB, PostgreSQL</span>
+  . I am also proficient in TypeScript and Prisma. Currently,
 </p>
 
 
