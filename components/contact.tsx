@@ -6,12 +6,13 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import LoadingOverlay from "./temp";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (event:any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     setLoading(true);
 
@@ -34,13 +35,12 @@ export default function Contact() {
       );
 
       if (!response.ok) {
-        throw new Error('Failed to send message.');
+        throw new Error("Failed to send message.");
       }
 
       event.target.reset();
 
       toast.success("Email sent successfully!");
-      
     } catch (error) {
       toast.error("Failed to send email.");
     } finally {
@@ -95,8 +95,12 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn  />
+
+        <SubmitBtn />
       </form>
+      <div className="flex justify-center items-center">
+        <LoadingOverlay isVisible={loading} />
+      </div>
     </motion.section>
   );
 }
