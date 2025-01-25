@@ -19,16 +19,18 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-  Bringing a strong track record in problem-solving and a keen curiosity for emerging technologies. My passion for learning drives me to stay on the cutting edge of the tech landscape, while my ability to collaborate effectively makes me a valuable team player. I thrive in environments where I can tackle multidisciplinary challenges and contribute innovative solutions. My core stack includes{" "}
-  <span className="font-medium">Express ,Nest ,React, Next.js, Node.js, MongoDB, PostgreSQL</span>
-  . I am also proficient in TypeScript and Prisma. Currently,
-</p>
-
+        With a strong passion for problem-solving and a natural curiosity for emerging technologies, I thrive in
+        environments where I can tackle multidisciplinary challenges. I believe in continuous learning, and my drive to
+        stay on the cutting edge of tech helps me deliver innovative solutions. I’m always looking for ways to push
+        boundaries, whether in development or in life. My ability to collaborate effectively makes me a strong team
+        player, and I’m just as comfortable leading projects as I am contributing to a team effort.
+      </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing Cricket ,Gyming , watching movies. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>
-       
+        <span className="italic">When I'm not coding</span>, you can find me enjoying a game of cricket, hitting the
+        gym, or watching the latest movies. I’m always seeking new hobbies and skills to master, whether it’s picking up
+        a new sport or diving into a book on a completely new topic. Life outside of code is where I get my creative
+        energy to fuel my next project.
       </p>
     </motion.section>
   );

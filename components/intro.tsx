@@ -22,7 +22,7 @@ const Intro: React.FC = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      await new Promise(resolve => setTimeout(resolve, 1000)); 
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setIsLoading(false);
     };
     loadData();
@@ -45,11 +45,7 @@ const Intro: React.FC = () => {
           <LoadingOverlay isVisible={true} />
         </div>
       ) : (
-        <section
-          ref={ref}
-          id="home"
-          className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
-        >
+        <section ref={ref} id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
           <div className="flex items-center justify-center">
             <div className="relative">
               <motion.div
@@ -68,7 +64,7 @@ const Intro: React.FC = () => {
                   quality="95"
                   priority={true}
                   className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-blue-900 shadow-xl cursor-pointer"
-                  onMouseEnter={() => openModal('/intro.jpg')}
+                  onMouseEnter={() => openModal("/intro.jpg")}
                 />
               </motion.div>
 
@@ -94,10 +90,14 @@ const Intro: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="font-bold">Hello, I'm Saroj.</span> I'm a{" "}
-            <span className="font-bold">Software developer</span> with{" "}
-            <span className="font-bold">1.5 years</span> of experience. I enjoy
-            building <span className="italic">sites, apps, and APIs</span>. My focus is{" "}
-            <span className="underline">Node.js, Express.js, React.js, Next.js, Django, Rust</span>.
+            <span className="font-bold">Software developer</span> with <span className="font-bold">two years</span> of
+            experience. I enjoy building <span className="italic">sites, apps, and APIs</span>. I’ve also built and
+            deployed a full-stack SaaS product, handling both the frontend and backend solo. My focus is{" "}
+            <span className="underline">
+              Node.js, Express.js, React.js, Next.js, Django, Rust, Docker, Kubernetes, MongoDB, PostgreSQL, Prisma,
+              Typescript{" "}
+            </span>
+            .
           </motion.h1>
 
           <motion.div
@@ -116,17 +116,15 @@ const Intro: React.FC = () => {
                 setTimeOfLastClick(Date.now());
               }}
             >
-              How to reach me{" "}
-              <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+              How to reach me <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
             </Link>
 
             <a
               className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-              href="/CV.pdf"
+              href="/saroj-cv.pdf"
               download
             >
-              Download CV{" "}
-              <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+              Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
             </a>
 
             <a

@@ -24,7 +24,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-        "https://my-portfolio-4dba8-default-rtdb.firebaseio.com/messages.json",
+        "https://portfolio-70a9a-default-rtdb.firebaseio.com/messages.json",
         {
           method: "POST",
           headers: {
