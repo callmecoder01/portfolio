@@ -128,7 +128,7 @@ export default function Contact() {
     const message = formData.get("message");
 
     const subject = "Contact Form Message";
-    const body = `Sender Email: ${senderEmail}\n\nMessage:\n${message}`;
+    const body = `${message}`;
 
     const mailtoLink = `mailto:geeksaroj@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       body
