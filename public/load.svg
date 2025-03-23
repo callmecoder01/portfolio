@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283 64">
+  <defs>
+    <!-- Define a deep blue gradient for text fill -->
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0033cc; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0056d6; stop-opacity:1" />
+    </linearGradient>
+    <!-- Define a shadow filter for text -->
+    <filter id="f1" x="0" y="0" width="150%" height="150%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.5)" />
+    </filter>
+  </defs>
+  <!-- Use the deep blue gradient and shadow for text styling -->
+  <text x="50%" y="50%" font-family="Verdana, sans-serif" font-size="80" fill="url(#gradient1)" text-anchor="middle" alignment-baseline="middle" filter="url(#f1)">
+    SAROJ
+  </text>
+</svg>
