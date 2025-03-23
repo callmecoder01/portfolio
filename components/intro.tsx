@@ -100,7 +100,7 @@ function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="font-bold">Hello, I'm Saroj.</span> I'm a{" "}
+            <span className="font-bold">Hi, I'm Saroj.</span> I'm a{" "}
             <span className="font-bold">Software developer</span> with <span className="font-bold">two years</span> of
             experience. I enjoy building <span className="italic">sites, apps, and APIs</span>. I’ve also built and
             deployed a full-stack SaaS product, handling both the frontend and backend solo. My focus is{" "}
