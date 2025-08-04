@@ -2,7 +2,6 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { MdOutlineComputer } from "react-icons/md";
-
 import mernProImg from "@/public/mernPro.png";
 import billingImg from "@/public/billin.png";
 import bookingImg from "@/public/booking.png";
