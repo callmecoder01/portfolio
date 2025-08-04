@@ -19,18 +19,15 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        With a strong passion for problem-solving and a natural curiosity for emerging technologies, I thrive in
-        environments where I can tackle multidisciplinary challenges. I believe in continuous learning, and my drive to
-        stay on the cutting edge of tech helps me deliver innovative solutions. I’m always looking for ways to push
-        boundaries, whether in development or in life. My ability to collaborate effectively makes me a strong team
-        player, and I’m just as comfortable leading projects as I am contributing to a team effort.
+        Hey there! I’m a Full Stack Developer with 3+ years of experience building backend systems and modern UIs that actually solve real problems. I work mainly with JavaScript, TypeScript, Node.js, and React—but I’m just as comfortable diving into infrastructure, APIs, or DevOps pipelines when needed.
+      </p>
+
+      <p className="mb-3">
+        Over the years, I’ve worked with startups and global teams to ship production-grade apps in industries like e-commerce, SaaS, and on-demand booking. Projects like the Hurry App, Homehandy, and Billin  taught me a lot about clean architecture, scalable APIs, and collaborating across teams. I also enjoy working with tools like Docker, GitHub Actions, AWS, and GCP to keep things running smoothly.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, you can find me enjoying a game of cricket, hitting the
-        gym, or watching the latest movies. I’m always seeking new hobbies and skills to master, whether it’s picking up
-        a new sport or diving into a book on a completely new topic. Life outside of code is where I get my creative
-        energy to fuel my next project.
+        <span className="italic">When I’m not coding</span>, I’m usually on a cricket field, lifting weights at the gym, or catching a movie. I’m big on learning—whether it’s picking up a new tech stack or exploring random curiosities on weekends. That constant drive to learn and improve is what keeps me going.
       </p>
     </motion.section>
   );
