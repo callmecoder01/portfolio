@@ -24,7 +24,7 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Backend Developer at Probits Pty Ltd",
+    title: "Full Stack Developer at Probits Pty Ltd",
     location: "Lalitpur, Nepal",
     description:
       "Built and maintained scalable backend systems using NestJS and Express. Deployed apps to AWS/GCP, integrated third-party services, and collaborated with remote teams. Led CI/CD setup, code reviews, and system performance optimizations.",
