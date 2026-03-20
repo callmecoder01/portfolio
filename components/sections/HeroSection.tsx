@@ -54,7 +54,7 @@ export default function HeroSection() {
     { icon: FiTerminal, label: 'Node.js' },
     { icon: FiServer, label: 'NestJS' },
     { icon: FiDatabase, label: 'PostgreSQL' },
-    { icon: FiCloud, label: 'AWS' },
+    { icon: FiCloud, label: 'Cloud Solutions' },
   ];
 
   const codeLines = [
