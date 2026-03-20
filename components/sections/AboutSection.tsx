@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import StatsCounter from '../ui/StatsCounter';
-import { FiCode, FiZap, FiUsers, FiAward, FiGitBranch, FiCpu } from 'react-icons/fi';
+import { FiCode, FiZap, FiUsers, FiAward, FiGitBranch } from 'react-icons/fi';
 
 export default function AboutSection() {
   const containerVariants = {
@@ -36,7 +35,7 @@ export default function AboutSection() {
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(rgba(139,92,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
@@ -59,7 +58,7 @@ export default function AboutSection() {
           {/* Left: Terminal-style about */}
           <motion.div variants={itemVariants}>
             <div className="relative">
-              <div className="absolute -inset-3 bg-gradient-to-r from-primary-400/10 to-purple-500/10 rounded-2xl blur-xl" />
+              <div className="absolute -inset-3 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-2xl blur-xl" />
               <div className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700/50">
                 {/* Terminal header */}
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-800/80 border-b border-gray-700/50">
@@ -110,7 +109,7 @@ export default function AboutSection() {
           {/* Right: Values grid + Stats */}
           <div className="space-y-6">
             <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3">
-              {values.map(({ icon: Icon, title, desc }, i) => (
+              {values.map(({ icon: Icon, title, desc }) => (
                 <motion.div
                   key={title}
                   whileHover={{ y: -3 }}

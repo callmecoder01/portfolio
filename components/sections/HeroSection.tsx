@@ -69,7 +69,7 @@ export default function HeroSection() {
     <div className="section-container relative !overflow-hidden">
       {/* Subtle grid background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(rgba(139,92,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
@@ -77,12 +77,12 @@ export default function HeroSection() {
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-20 right-[20%] w-72 h-72 bg-primary-400/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-[20%] w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none"
       />
       <motion.div
         animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-20 left-[10%] w-96 h-96 bg-purple-500/8 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-20 left-[10%] w-96 h-96 bg-blue-500/8 rounded-full blur-3xl pointer-events-none"
       />
 
       {/* Main content - split layout */}
@@ -194,7 +194,7 @@ export default function HeroSection() {
         >
           <div className="relative">
             {/* Glow behind terminal */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary-400/20 to-purple-500/20 rounded-3xl blur-2xl" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-3xl blur-2xl" />
 
             {/* Terminal window */}
             <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl">
@@ -257,7 +257,7 @@ export default function HeroSection() {
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               className="absolute -bottom-3 -left-3 px-3 py-1.5 bg-white rounded-xl shadow-lg border border-gray-100 text-xs font-semibold text-gray-700 flex items-center gap-1.5"
             >
-              <span className="w-2 h-2 rounded-full bg-purple-500" />
+              <span className="w-2 h-2 rounded-full bg-blue-500" />
               10K+ API Requests/day
             </motion.div>
           </div>

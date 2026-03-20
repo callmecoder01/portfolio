@@ -49,7 +49,7 @@ export default function ContactSection() {
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(rgba(139,92,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
@@ -72,7 +72,7 @@ export default function ContactSection() {
           {/* Left: Form styled as terminal */}
           <motion.div variants={itemVariants}>
             <div className="relative">
-              <div className="absolute -inset-3 bg-gradient-to-r from-primary-400/10 to-purple-500/10 rounded-2xl blur-xl" />
+              <div className="absolute -inset-3 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-2xl blur-xl" />
               <div className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700/50">
                 {/* Terminal header */}
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-800/80 border-b border-gray-700/50">

@@ -60,7 +60,7 @@ export default function SkillsSection() {
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(rgba(139,92,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
@@ -81,7 +81,7 @@ export default function SkillsSection() {
 
         {/* Skills grid as terminal cards */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-          {skillCategories.map((category, catIndex) => (
+          {skillCategories.map((category) => (
             <motion.div
               key={category.title}
               variants={itemVariants}

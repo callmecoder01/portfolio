@@ -9,21 +9,26 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#FAF5FF',
-          100: '#F3E8FF',
-          200: '#E9D5FF',
-          300: '#D8B4FE',
-          400: '#C084FC',
-          500: '#A78BFA',
-          600: '#9333EA',
-          700: '#7E22CE',
-          800: '#6B21A8',
-          900: '#581C87',
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#06B6D4',
+          600: '#0891B2',
+          700: '#0E7490',
+          800: '#155E75',
+          900: '#164E63',
+        },
+        accent: {
+          400: '#60A5FA',
+          500: '#3B82F6',
+          600: '#2563EB',
         },
         dark: {
-          DEFAULT: '#0F0F1E',
-          light: '#1A1A2E',
-          lighter: '#25253E',
+          DEFAULT: '#0A0A0F',
+          light: '#141420',
+          lighter: '#1E1E2E',
         }
       },
       fontFamily: {
@@ -40,10 +45,10 @@ module.exports = {
         xs: '2px',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(167, 139, 250, 0.3)',
-        'glow-lg': '0 0 40px rgba(167, 139, 250, 0.4)',
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-        'premium': '0 20px 60px -15px rgba(167, 139, 250, 0.3)',
+        'glow': '0 0 20px rgba(6, 182, 212, 0.25)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.35)',
+        'glass': '0 8px 32px 0 rgba(6, 182, 212, 0.08)',
+        'premium': '0 20px 60px -15px rgba(6, 182, 212, 0.3)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -71,8 +76,8 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
         glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(167, 139, 250, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.25)' },
+          '50%': { boxShadow: '0 0 40px rgba(6, 182, 212, 0.5)' },
         },
         blob: {
           '0%': { transform: 'translate(0px, 0px) scale(1)' },
