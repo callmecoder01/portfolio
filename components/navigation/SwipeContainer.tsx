@@ -2,8 +2,11 @@
 
 import { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../ThemeProvider';
+
+const ParticleNetwork = dynamic(() => import('../effects/ParticleNetwork'), { ssr: false });
 
 interface SwipeContainerProps {
   children: ReactNode[];
@@ -76,6 +79,9 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
+      {/* Persistent 3D background across all sections */}
+      <ParticleNetwork />
+
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           key={currentSection}
