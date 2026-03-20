@@ -22,10 +22,17 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Full Stack Developer at Probits Pty Ltd",
+    title: "Full Stack Developer (Backend & DevOps) at Probits Pty Ltd",
     location: "Lalitpur, Nepal",
     description:
       "Architected scalable backend systems using NestJS and Express with 99.9% uptime. Deployed on AWS and GCP handling 10K+ daily API requests. Automated CI/CD pipelines and mentored junior developers.",
+    highlights: [
+      "Architected scalable backend systems using NestJS and Express, delivering RESTful APIs for international client products with 99.9% uptime",
+      "Deployed production applications on AWS and GCP with auto-scaling, handling 10K+ daily API requests across multiple services",
+      "Automated CI/CD pipelines using GitHub Actions, streamlining deployment workflows across multiple environments",
+      "Mentored junior developers through code reviews and pair programming, improving team code quality and consistency",
+    ],
+    techStack: ["NestJS", "Express", "AWS", "GCP", "GitHub Actions", "Docker", "PostgreSQL"],
     icon: React.createElement(MdOutlineComputer),
     date: "March 2025 – Present",
   },
@@ -34,6 +41,12 @@ export const experiencesData = [
     location: "Lalitpur, Nepal",
     description:
       "Built production apps using NestJS, PostgreSQL, and React serving 5K+ active users. Containerized with Docker, configured Nginx load balancing, and optimized with Redis caching for zero-downtime deployments.",
+    highlights: [
+      "Built and shipped production applications using NestJS, PostgreSQL, and React, serving 5K+ combined active users",
+      "Containerized applications with Docker and configured Nginx load balancing, achieving zero-downtime deployments on DigitalOcean and AWS",
+      "Optimized database queries and added Redis caching, reducing average API response times across all services",
+    ],
+    techStack: ["NestJS", "PostgreSQL", "React", "Docker", "Nginx", "Redis", "DigitalOcean", "AWS"],
     icon: React.createElement(MdOutlineComputer),
     date: "April 2024 – April 2025",
   },
@@ -42,6 +55,12 @@ export const experiencesData = [
     location: "Kathmandu, Nepal",
     description:
       "Delivered client-facing web applications end-to-end. Built responsive React frontends with RESTful Node.js backends, improving Core Web Vitals through lazy loading and code splitting.",
+    highlights: [
+      "Delivered client-facing web applications end-to-end from requirements to production, consistently meeting sprint deadlines",
+      "Built responsive React frontends integrated with RESTful Node.js backends, improving Core Web Vitals scores through lazy loading and code splitting",
+      "Reduced cross-browser compatibility issues by implementing responsive design patterns and automated browser testing",
+    ],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "REST APIs"],
     icon: React.createElement(MdOutlineComputer),
     date: "Feb 2023 – April 2024",
   },
@@ -50,6 +69,12 @@ export const experiencesData = [
     location: "Kathmandu, Nepal",
     description:
       "Worked on full lifecycle development: built RESTful APIs, implemented secure authentication, and contributed to product releases.",
+    highlights: [
+      "Worked on full lifecycle development from planning to deployment",
+      "Built RESTful APIs and implemented secure authentication flows",
+      "Contributed to product releases and collaborated with senior engineers",
+    ],
+    techStack: ["Node.js", "React", "MongoDB", "Express", "Git"],
     icon: React.createElement(CgWorkAlt),
     date: "Oct 2022 – Jan 2023",
   },
