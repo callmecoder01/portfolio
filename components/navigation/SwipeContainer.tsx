@@ -4,6 +4,7 @@ import { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { FiSun, FiMoon } from 'react-icons/fi';
+import { TbCube, TbCubeOff } from 'react-icons/tb';
 import { useTheme } from '../ThemeProvider';
 
 const ParticleNetwork = dynamic(() => import('../effects/ParticleNetwork'), { ssr: false });
@@ -17,8 +18,23 @@ const sectionLabels = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Con
 export default function SwipeContainer({ children }: SwipeContainerProps) {
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [show3D, setShow3D] = useState(false);
   const totalSections = children.length;
   const { theme, toggleTheme } = useTheme();
+
+  // Persist 3D preference
+  useEffect(() => {
+    const saved = localStorage.getItem('show3D');
+    if (saved === 'true') setShow3D(true);
+  }, []);
+
+  const toggle3D = () => {
+    setShow3D((prev) => {
+      const next = !prev;
+      localStorage.setItem('show3D', String(next));
+      return next;
+    });
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,7 +63,7 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
     };
   }, [currentSection, totalSections]);
 
-  const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDragEnd = (_e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
 
     if (info.offset.x < -swipeThreshold && currentSection < totalSections - 1) {
@@ -79,8 +95,8 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      {/* Persistent 3D background across all sections */}
-      <ParticleNetwork />
+      {/* 3D background - only when enabled */}
+      {show3D && <ParticleNetwork />}
 
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
@@ -105,16 +121,34 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
         </motion.div>
       </AnimatePresence>
 
-      {/* Theme toggle - top right */}
-      <motion.button
-        onClick={toggleTheme}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed top-5 right-5 md:top-6 md:right-6 z-50 w-10 h-10 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 shadow-lg transition-colors"
-        aria-label="Toggle theme"
-      >
-        {theme === 'dark' ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
-      </motion.button>
+      {/* Top-right controls */}
+      <div className="fixed top-5 right-5 md:top-6 md:right-6 z-50 flex items-center gap-2">
+        {/* 3D toggle */}
+        <motion.button
+          onClick={toggle3D}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className={`w-10 h-10 rounded-xl backdrop-blur-sm border flex items-center justify-center shadow-lg transition-colors ${
+            show3D
+              ? 'bg-primary-500/20 dark:bg-primary-500/20 border-primary-400/50 text-primary-500'
+              : 'bg-white/80 dark:bg-gray-800/80 border-gray-200/50 dark:border-gray-700/50 text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400'
+          }`}
+          aria-label="Toggle 3D effects"
+        >
+          {show3D ? <TbCube className="w-4 h-4" /> : <TbCubeOff className="w-4 h-4" />}
+        </motion.button>
+
+        {/* Theme toggle */}
+        <motion.button
+          onClick={toggleTheme}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-10 h-10 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 shadow-lg transition-colors"
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
+        </motion.button>
+      </div>
 
       {/* Desktop: Text labels on right */}
       <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-4 text-sm font-medium">
