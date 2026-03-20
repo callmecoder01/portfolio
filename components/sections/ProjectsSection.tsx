@@ -1,8 +1,8 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FiChevronLeft, FiChevronRight, FiExternalLink, FiFolder, FiGitCommit } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiFolder, FiGitCommit } from 'react-icons/fi';
 import { projectsData } from '@/lib/data';
 import Image from 'next/image';
 
@@ -39,7 +39,7 @@ export default function ProjectsSection() {
   return (
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
         backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
@@ -54,8 +54,8 @@ export default function ProjectsSection() {
         {/* Section Header */}
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6 sm:mb-8">
           <div>
-            <p className="text-sm font-mono text-gray-500 mb-1">{'// recent work'}</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
+            <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-1">{'// recent work'}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
               Featured <span className="gradient-text">Projects</span>
             </h2>
           </div>
@@ -95,7 +95,7 @@ export default function ProjectsSection() {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl overflow-hidden hover:border-primary-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+              <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl overflow-hidden hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 {/* Image with terminal overlay */}
                 <div className="relative h-40 overflow-hidden bg-gray-900">
                   <Image
@@ -119,13 +119,13 @@ export default function ProjectsSection() {
                 {/* Content */}
                 <div className="p-4 flex flex-col flex-grow space-y-3">
                   <div className="flex items-start justify-between">
-                    <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                       {project.title}
                     </h3>
                     <FiGitCommit className="w-4 h-4 text-gray-400 flex-shrink-0 mt-1" />
                   </div>
 
-                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-2 flex-grow">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2 flex-grow">
                     {project.description}
                   </p>
 
@@ -155,7 +155,7 @@ export default function ProjectsSection() {
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 index === currentPage
                   ? 'w-8 bg-primary-500'
-                  : 'w-1.5 bg-gray-300 hover:bg-primary-300'
+                  : 'w-1.5 bg-gray-300 dark:bg-gray-600 hover:bg-primary-300'
               }`}
               aria-label={`Go to page ${index + 1}`}
             />

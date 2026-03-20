@@ -2,6 +2,8 @@
 
 import { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
+import { FiSun, FiMoon } from 'react-icons/fi';
+import { useTheme } from '../ThemeProvider';
 
 interface SwipeContainerProps {
   children: ReactNode[];
@@ -13,6 +15,7 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState(0);
   const totalSections = children.length;
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -96,6 +99,17 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
         </motion.div>
       </AnimatePresence>
 
+      {/* Theme toggle - top right */}
+      <motion.button
+        onClick={toggleTheme}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed top-5 right-5 md:top-6 md:right-6 z-50 w-10 h-10 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 shadow-lg transition-colors"
+        aria-label="Toggle theme"
+      >
+        {theme === 'dark' ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
+      </motion.button>
+
       {/* Desktop: Text labels on right */}
       <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-4 text-sm font-medium">
         {sectionLabels.map((label, index) => (
@@ -107,8 +121,8 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
             }}
             className={`text-right transition-all duration-300 ${
               index === currentSection
-                ? 'text-primary-600 scale-110 font-semibold'
-                : 'text-gray-400 hover:text-primary-500'
+                ? 'text-primary-600 dark:text-primary-400 scale-110 font-semibold'
+                : 'text-gray-400 dark:text-gray-500 hover:text-primary-500 dark:hover:text-primary-400'
             }`}
           >
             {label}
@@ -117,7 +131,7 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
       </div>
 
       {/* Mobile: Dots at bottom */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex md:hidden items-center gap-2 px-3 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 shadow-lg">
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex md:hidden items-center gap-2 px-3 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
         {sectionLabels.map((label, index) => (
           <button
             key={label}
@@ -128,7 +142,7 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
             className={`rounded-full transition-all duration-300 ${
               index === currentSection
                 ? 'w-6 h-2 bg-primary-500'
-                : 'w-2 h-2 bg-gray-300 active:bg-primary-400'
+                : 'w-2 h-2 bg-gray-300 dark:bg-gray-600 active:bg-primary-400'
             }`}
             aria-label={label}
           />

@@ -38,7 +38,7 @@ export default function CursorGlow() {
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
-          background: 'radial-gradient(circle, rgba(167, 139, 250, 0.6) 0%, rgba(167, 139, 250, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(6, 182, 212, 0.6) 0%, rgba(6, 182, 212, 0) 70%)',
         }}
         animate={{
           opacity: isVisible ? 1 : 0,
@@ -53,7 +53,7 @@ export default function CursorGlow() {
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
-          background: 'radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, rgba(167, 139, 250, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0) 70%)',
           translateX: '-50%',
           translateY: '-50%',
         }}

@@ -68,7 +68,7 @@ export default function HeroSection() {
   return (
     <div className="section-container relative !overflow-hidden">
       {/* Subtle grid background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
         backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
@@ -77,12 +77,12 @@ export default function HeroSection() {
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-20 right-[20%] w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-[20%] w-72 h-72 bg-cyan-400/10 dark:bg-cyan-400/5 rounded-full blur-3xl pointer-events-none"
       />
       <motion.div
         animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-20 left-[10%] w-96 h-96 bg-blue-500/8 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-20 left-[10%] w-96 h-96 bg-blue-500/8 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none"
       />
 
       {/* Main content - split layout */}
@@ -97,7 +97,7 @@ export default function HeroSection() {
         >
           {/* Status badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100/80 border border-primary-200/50 text-primary-700 text-sm font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100/80 dark:bg-primary-900/30 border border-primary-200/50 dark:border-primary-700/30 text-primary-700 dark:text-primary-300 text-sm font-medium">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
@@ -108,23 +108,23 @@ export default function HeroSection() {
 
           {/* Name */}
           <motion.div variants={itemVariants}>
-            <p className="text-base text-gray-500 font-mono mb-1">{'// hello world'}</p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 leading-tight">
+            <p className="text-base text-gray-500 dark:text-gray-400 font-mono mb-1">{'// hello world'}</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 dark:text-white leading-tight">
               Saroj <span className="gradient-text">Sah</span>
             </h1>
           </motion.div>
 
           {/* Typing role */}
           <motion.div variants={itemVariants} className="h-10">
-            <p className="text-lg sm:text-xl md:text-2xl font-mono text-gray-600">
+            <p className="text-lg sm:text-xl md:text-2xl font-mono text-gray-600 dark:text-gray-400">
               {'> '}
-              <span className="text-primary-600 font-semibold">{text}</span>
+              <span className="text-primary-600 dark:text-primary-400 font-semibold">{text}</span>
               <span className={`inline-block w-0.5 h-6 ml-0.5 bg-primary-500 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
             </p>
           </motion.div>
 
           {/* Description */}
-          <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-600 max-w-lg leading-relaxed">
+          <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
             3+ years building scalable backend systems, AI-powered pipelines, and production apps across e-commerce, SaaS, and EdTech.
           </motion.p>
 
@@ -136,7 +136,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1 + i * 0.1 }}
-                className="flex items-center gap-2 px-3 py-1.5 bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-lg text-sm text-gray-700 font-medium"
+                className="flex items-center gap-2 px-3 py-1.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-lg text-sm text-gray-700 dark:text-gray-300 font-medium"
               >
                 <Icon className="w-4 h-4 text-primary-500" />
                 {label}
@@ -175,7 +175,7 @@ export default function HeroSection() {
                 target={label !== 'Email' ? '_blank' : undefined}
                 rel={label !== 'Email' ? 'noopener noreferrer' : undefined}
                 aria-label={label}
-                className="w-10 h-10 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-200/50 flex items-center justify-center text-gray-600 hover:text-primary-600 hover:border-primary-300 hover:shadow-glow transition-all duration-300"
+                className="w-10 h-10 rounded-xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-glow transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -194,7 +194,7 @@ export default function HeroSection() {
         >
           <div className="relative">
             {/* Glow behind terminal */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-3xl blur-2xl" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 dark:from-cyan-400/10 dark:to-blue-500/10 rounded-3xl blur-2xl" />
 
             {/* Terminal window */}
             <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl">
@@ -246,7 +246,7 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-3 -right-3 px-3 py-1.5 bg-white rounded-xl shadow-lg border border-gray-100 text-xs font-semibold text-gray-700 flex items-center gap-1.5"
+              className="absolute -top-3 -right-3 px-3 py-1.5 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 text-xs font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-1.5"
             >
               <span className="w-2 h-2 rounded-full bg-green-500" />
               99.9% Uptime
@@ -255,7 +255,7 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -bottom-3 -left-3 px-3 py-1.5 bg-white rounded-xl shadow-lg border border-gray-100 text-xs font-semibold text-gray-700 flex items-center gap-1.5"
+              className="absolute -bottom-3 -left-3 px-3 py-1.5 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 text-xs font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-1.5"
             >
               <span className="w-2 h-2 rounded-full bg-blue-500" />
               10K+ API Requests/day

@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import FloatingBlobs from "@/components/effects/FloatingBlobs";
 import CursorGlow from "@/components/effects/CursorGlow";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,20 +29,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <body className="overflow-x-hidden">
-        <FloatingBlobs />
-        <CursorGlow />
-        {children}
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            className: 'glass-card',
-            style: {
-              borderRadius: '1rem',
-            },
-          }}
-        />
+        <ThemeProvider>
+          <FloatingBlobs />
+          <CursorGlow />
+          {children}
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              className: 'glass-card',
+              style: {
+                borderRadius: '1rem',
+              },
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

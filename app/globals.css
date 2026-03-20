@@ -14,12 +14,17 @@
     @apply bg-gradient-to-br from-gray-50 via-cyan-50/20 to-gray-50 text-gray-900 font-sans antialiased;
     overflow-x: hidden;
   }
+
+  .dark body,
+  html.dark body {
+    @apply from-gray-950 via-gray-900 to-gray-950 text-gray-100;
+  }
 }
 
 @layer components {
   /* Glass Morphism Card */
   .glass-card {
-    @apply bg-white/40 backdrop-blur-2xl border border-white/20 shadow-glass rounded-3xl;
+    @apply bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/20 dark:border-white/10 shadow-glass rounded-3xl;
   }
 
   .glass-card-dark {
@@ -32,7 +37,7 @@
   }
 
   .btn-outline {
-    @apply px-8 py-4 bg-transparent border-2 border-primary-500 text-primary-600 font-medium rounded-2xl transition-all duration-300 hover:bg-primary-500 hover:text-white hover:shadow-glow;
+    @apply px-8 py-4 bg-transparent border-2 border-primary-500 text-primary-600 dark:text-primary-400 font-medium rounded-2xl transition-all duration-300 hover:bg-primary-500 hover:text-white hover:shadow-glow;
   }
 
   /* Gradient Text */
@@ -54,7 +59,7 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-gray-100 rounded-full;
+    @apply bg-gray-100 dark:bg-gray-800 rounded-full;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {

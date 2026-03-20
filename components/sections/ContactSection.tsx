@@ -48,7 +48,7 @@ export default function ContactSection() {
   return (
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
         backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
@@ -62,8 +62,8 @@ export default function ContactSection() {
       >
         {/* Section Header */}
         <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-sm font-mono text-gray-500 mb-1">{'// lets connect'}</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-1">{'// lets connect'}</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
             Get In <span className="gradient-text">Touch</span>
           </h2>
         </motion.div>
@@ -72,7 +72,7 @@ export default function ContactSection() {
           {/* Left: Form styled as terminal */}
           <motion.div variants={itemVariants}>
             <div className="relative">
-              <div className="absolute -inset-3 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-2xl blur-xl" />
+              <div className="absolute -inset-3 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 dark:from-cyan-400/5 dark:to-blue-500/5 rounded-2xl blur-xl" />
               <div className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700/50">
                 {/* Terminal header */}
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-800/80 border-b border-gray-700/50">
@@ -166,14 +166,14 @@ export default function ContactSection() {
                 variants={itemVariants}
                 href={href}
                 whileHover={{ x: 4 }}
-                className="group flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+                className="group flex items-center gap-4 p-4 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center text-primary-400 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                <div className="w-10 h-10 bg-gray-900 dark:bg-gray-700 rounded-lg flex items-center justify-center text-primary-400 group-hover:bg-primary-600 group-hover:text-white transition-colors">
                   <Icon className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs font-mono text-gray-500">{label}</p>
-                  <p className="font-semibold text-gray-800 text-sm">{value}</p>
+                  <p className="text-xs font-mono text-gray-500 dark:text-gray-400">{label}</p>
+                  <p className="font-semibold text-gray-800 dark:text-gray-200 text-sm">{value}</p>
                 </div>
               </motion.a>
             ))}
@@ -207,15 +207,15 @@ export default function ContactSection() {
             {/* Availability */}
             <motion.div
               variants={itemVariants}
-              className="flex items-center gap-3 p-4 bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl"
+              className="flex items-center gap-3 p-4 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl"
             >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
               </span>
               <div>
-                <p className="font-semibold text-gray-800 text-sm">Available for opportunities</p>
-                <p className="text-xs text-gray-500 font-mono">status: online</p>
+                <p className="font-semibold text-gray-800 dark:text-gray-200 text-sm">Available for opportunities</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 font-mono">status: online</p>
               </div>
             </motion.div>
           </div>

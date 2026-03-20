@@ -59,7 +59,7 @@ export default function SkillsSection() {
   return (
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
         backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
@@ -73,8 +73,8 @@ export default function SkillsSection() {
       >
         {/* Section Header */}
         <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-sm font-mono text-gray-500 mb-1">{'// tech stack'}</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-1">{'// tech stack'}</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>

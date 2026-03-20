@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 export default function FloatingBlobs() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Blob 1 - Purple */}
+      {/* Blob 1 */}
       <motion.div
-        className="absolute top-0 -left-4 w-96 h-96 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+        className="absolute top-0 -left-4 w-96 h-96 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-30 dark:opacity-10"
         animate={{
           x: [0, 100, 0],
           y: [0, -100, 0],
@@ -20,9 +20,9 @@ export default function FloatingBlobs() {
         }}
       />
 
-      {/* Blob 2 - Light Purple */}
+      {/* Blob 2 */}
       <motion.div
-        className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-br from-primary-300 to-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+        className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-br from-primary-300 to-primary-500 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-30 dark:opacity-10"
         animate={{
           x: [0, -80, 0],
           y: [0, 100, 0],
@@ -36,9 +36,9 @@ export default function FloatingBlobs() {
         }}
       />
 
-      {/* Blob 3 - Pink Purple */}
+      {/* Blob 3 */}
       <motion.div
-        className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-br from-pink-300 to-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-25"
+        className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-300 to-primary-400 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-25 dark:opacity-8"
         animate={{
           x: [0, 50, 0],
           y: [0, -80, 0],
@@ -52,9 +52,9 @@ export default function FloatingBlobs() {
         }}
       />
 
-      {/* Blob 4 - Violet */}
+      {/* Blob 4 */}
       <motion.div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-violet-300 to-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-blue-300 to-primary-500 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-8"
         animate={{
           x: [0, -60, 0],
           y: [0, 60, 0],
@@ -70,9 +70,9 @@ export default function FloatingBlobs() {
 
       {/* Grid Pattern Overlay */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(99 102 241) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(6 182 212) 1px, transparent 0)`,
           backgroundSize: '40px 40px',
         }}
       />

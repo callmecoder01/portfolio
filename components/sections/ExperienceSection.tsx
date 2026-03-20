@@ -21,7 +21,7 @@ export default function ExperienceSection() {
   return (
     <div className="section-container relative !overflow-hidden">
       {/* Grid background */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
         backgroundImage: 'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
@@ -35,8 +35,8 @@ export default function ExperienceSection() {
       >
         {/* Section Header */}
         <motion.div variants={itemVariants} className="mb-8">
-          <p className="text-sm font-mono text-gray-500 mb-1">{'// career path'}</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-1">{'// career path'}</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
             Work <span className="gradient-text">Experience</span>
           </h2>
         </motion.div>
@@ -44,7 +44,7 @@ export default function ExperienceSection() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gray-200 hidden md:block" />
+          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 hidden md:block" />
 
           <div className="space-y-4 pb-16 md:pb-0">
             {experiencesData.map((experience, index) => (
@@ -56,21 +56,21 @@ export default function ExperienceSection() {
               >
                 {/* Timeline dot */}
                 <div className="hidden md:flex flex-col items-center pt-5">
-                  <div className="w-[10px] h-[10px] rounded-full bg-gray-900 border-2 border-primary-500 z-10 group-hover:scale-125 transition-transform" />
+                  <div className="w-[10px] h-[10px] rounded-full bg-gray-900 dark:bg-gray-100 border-2 border-primary-500 z-10 group-hover:scale-125 transition-transform" />
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl p-5 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
+                <div className="flex-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl p-5 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
                     <div>
                       {/* Title as terminal command */}
                       <div className="flex items-center gap-2 mb-1">
                         <FiChevronRight className="w-3.5 h-3.5 text-green-500" />
-                        <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-600 transition-colors">
+                        <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                           {experience.title}
                         </h3>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                         <span className="flex items-center gap-1">
                           <FiMapPin className="w-3 h-3" />
                           {experience.location}
@@ -84,7 +84,7 @@ export default function ExperienceSection() {
 
                     {/* Status badge */}
                     {index === 0 && (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-mono font-medium shrink-0">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-mono font-medium shrink-0">
                         <span className="relative flex h-1.5 w-1.5">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500" />
