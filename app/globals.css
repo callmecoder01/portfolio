@@ -42,7 +42,7 @@
 
   /* Section Container */
   .section-container {
-    @apply min-h-screen w-screen flex items-center justify-center px-6 md:px-12 lg:px-24;
+    @apply h-screen w-screen overflow-y-auto px-6 md:px-12 lg:px-24 py-8 flex items-center justify-center;
   }
 }
 

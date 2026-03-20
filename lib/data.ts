@@ -1,17 +1,15 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { MdOutlineComputer } from "react-icons/md";
 import mernProImg from "@/public/mernPro.png";
 import billingImg from "@/public/billin.png";
 import bookingImg from "@/public/booking.png";
 import oneSysImg from "@/public/1sys.png";
-import ecommersImg from "@/public/ecommers.png";
-import hurryAppImg from "@/public/HurryApp.png"
-import homeHandy from "@/public/HomeHandy.png"
-import nativus from "@/public/nativus.png"
-
-import NewsportalImg from "@/public/newsportal.png";
+import hurryAppImg from "@/public/HurryApp.png";
+import homeHandy from "@/public/HomeHandy.png";
+import nativus from "@/public/nativus.png";
+import thinko from "@/public/thinko.jpg";
+import biLingual from "@/public/bilingual.jpg";
 
 export const links = [
   { name: "Home", hash: "#home" },
@@ -27,7 +25,7 @@ export const experiencesData = [
     title: "Full Stack Developer at Probits Pty Ltd",
     location: "Lalitpur, Nepal",
     description:
-      "Built and maintained scalable backend systems using NestJS and Express. Deployed apps to AWS/GCP, integrated third-party services, and collaborated with remote teams. Led CI/CD setup, code reviews, and system performance optimizations.",
+      "Architected scalable backend systems using NestJS and Express with 99.9% uptime. Deployed on AWS and GCP handling 10K+ daily API requests. Automated CI/CD pipelines and mentored junior developers.",
     icon: React.createElement(MdOutlineComputer),
     date: "March 2025 – Present",
   },
@@ -35,7 +33,7 @@ export const experiencesData = [
     title: "Full Stack Developer at Silk Innovation",
     location: "Lalitpur, Nepal",
     description:
-      "Developed full-stack apps like Jhattai Booking and One-Sys. Worked with NestJS, PostgreSQL, and React. Set up Docker, Nginx, CI/CD, and optimized deployments on DigitalOcean and AWS.",
+      "Built production apps using NestJS, PostgreSQL, and React serving 5K+ active users. Containerized with Docker, configured Nginx load balancing, and optimized with Redis caching for zero-downtime deployments.",
     icon: React.createElement(MdOutlineComputer),
     date: "April 2024 – April 2025",
   },
@@ -43,7 +41,7 @@ export const experiencesData = [
     title: "Full Stack Developer at Supreme IT Solution",
     location: "Kathmandu, Nepal",
     description:
-      "Created scalable web apps with React and Node.js. Designed secure REST APIs, optimized performance, and implemented frontend features with Tailwind CSS, Material UI, and Framer Motion.",
+      "Delivered client-facing web applications end-to-end. Built responsive React frontends with RESTful Node.js backends, improving Core Web Vitals through lazy loading and code splitting.",
     icon: React.createElement(MdOutlineComputer),
     date: "Feb 2023 – April 2024",
   },
@@ -59,11 +57,25 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "ThinkO Learning Platform",
+    description:
+      "A multi-school SaaS platform for course delivery, AI-powered quiz generation, and adaptive video streaming. Features role-based access, AWS Lambda AI pipelines, HLS streaming, and real-time quiz engine.",
+    tags: ["Node.js", "TypeScript", "PostgreSQL", "AWS Lambda", "S3", "HLS", "Firebase"],
+    imageUrl: thinko,
+  },
+  {
+    title: "BiLinguaLearn",
+    description:
+      "An AI-powered language learning platform where users practice real-time conversations with an AI tutor. Features sub-second latency streaming, Stripe credit-based payments, and Clerk authentication.",
+    tags: ["NestJS", "TypeScript", "Stripe", "Clerk", "AI/LLM", "React"],
+    imageUrl: biLingual,
+  },
+  {
     title: "Hurry App",
     description:
       "A Tinder-style e-commerce platform where users swipe on products to unlock discounts from active vendor campaigns. Features multi-role access, real-time chat, and campaign management.",
     tags: ["Node.js", "Express", "React", "MongoDB", "Socket.IO", "Tailwind"],
-    imageUrl: hurryAppImg,   
+    imageUrl: hurryAppImg,
   },
   {
     title: "Homehandy",
@@ -113,42 +125,42 @@ export const projectsData = [
 export const skillsData = [
   "JavaScript",
   "TypeScript",
+  "Python",
+  "Golang",
   "React",
   "Next.js",
   "Vue.js",
-  "Node.js",
-  "Express.js",
-  "NestJS",
-  "Loopback",
-  "Django",
-  "Strapi CMS",
-  "MongoDB",
-  "PostgreSQL",
-  "MySQL",
-  "Oracle",
-  "Redis",
   "Tailwind CSS",
   "Material UI",
-  "RizzUI",
   "Redux",
   "Zustand",
   "React Query",
-  "RTK Query",
-  "React Hook Form",
+  "Node.js",
+  "Express.js",
+  "NestJS",
+  "Django",
+  "Strapi CMS",
+  "REST APIs",
+  "Microservices",
+  "PostgreSQL",
+  "MongoDB",
+  "MySQL",
+  "Redis",
+  "TypeORM",
+  "Mongoose",
   "Docker",
   "Kubernetes",
-  "Git",
-  "GitHub Actions",
-  "Bitbucket",
+  "Nginx",
   "AWS",
   "GCP",
   "DigitalOcean",
-  "Vercel",
-  "Render",
+  "GitHub Actions",
+  "CI/CD",
   "Socket.IO",
+  "Stripe",
+  "Clerk",
+  "Git",
   "Linux",
-  "Python",
-  "HTML",
-  "CSS",
   "N8N",
+  "System Design",
 ] as const;

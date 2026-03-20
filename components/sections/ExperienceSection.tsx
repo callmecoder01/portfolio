@@ -2,94 +2,109 @@
 
 import { motion } from 'framer-motion';
 import { experiencesData } from '@/lib/data';
+import { FiMapPin, FiCalendar, FiChevronRight } from 'react-icons/fi';
 
 export default function ExperienceSection() {
-  return (
-    <div className="section-container">
-      <div className="h-full overflow-y-auto overflow-x-hidden py-12 px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto"
-        >
-          {/* Section Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
-              Experience
-            </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full mx-auto mb-6" />
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              My professional journey and contributions
-            </p>
-          </motion.div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+    },
+  };
 
-          {/* Experience Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  };
+
+  return (
+    <div className="section-container relative !overflow-hidden">
+      {/* Grid background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(rgba(139,92,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.3) 1px, transparent 1px)',
+        backgroundSize: '60px 60px',
+      }} />
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="relative z-10 max-w-7xl mx-auto w-full"
+      >
+        {/* Section Header */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <p className="text-sm font-mono text-gray-500 mb-1">{'// career path'}</p>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+            Work <span className="gradient-text">Experience</span>
+          </h2>
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gray-200 hidden md:block" />
+
+          <div className="space-y-4">
             {experiencesData.map((experience, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="glass-card p-6 rounded-3xl space-y-4 hover:shadow-glow transition-all duration-300 h-full flex flex-col"
+                variants={itemVariants}
+                whileHover={{ x: 4 }}
+                className="group relative flex gap-5"
               >
-                {/* Icon and Date */}
-                <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center text-white shadow-glow text-2xl">
-                    {experience.icon}
-                  </div>
-                  <div className="px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                    {experience.date}
-                  </div>
+                {/* Timeline dot */}
+                <div className="hidden md:flex flex-col items-center pt-5">
+                  <div className="w-[10px] h-[10px] rounded-full bg-gray-900 border-2 border-primary-500 z-10 group-hover:scale-125 transition-transform" />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-display font-bold text-gray-800">
-                  {experience.title}
-                </h3>
+                {/* Card */}
+                <div className="flex-1 bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl p-5 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+                    <div>
+                      {/* Title as terminal command */}
+                      <div className="flex items-center gap-2 mb-1">
+                        <FiChevronRight className="w-3.5 h-3.5 text-green-500" />
+                        <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-600 transition-colors">
+                          {experience.title}
+                        </h3>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                        <span className="flex items-center gap-1">
+                          <FiMapPin className="w-3 h-3" />
+                          {experience.location}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <FiCalendar className="w-3 h-3" />
+                          {experience.date}
+                        </span>
+                      </div>
+                    </div>
 
-                {/* Location */}
-                <p className="text-primary-600 font-medium flex items-center gap-2">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  {experience.location}
-                </p>
+                    {/* Status badge */}
+                    {index === 0 && (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-mono font-medium shrink-0">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500" />
+                        </span>
+                        current
+                      </span>
+                    )}
+                  </div>
 
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed flex-grow">
-                  {experience.description}
-                </p>
+                  {/* Description styled as log output */}
+                  <div className="bg-gray-900 rounded-lg px-4 py-3 font-mono text-xs">
+                    <span className="text-gray-500">{'> '}</span>
+                    <span className="text-gray-300">{experience.description}</span>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
