@@ -36,7 +36,7 @@ export default function ExperienceSection() {
         {/* Section Header */}
         <motion.div variants={itemVariants} className="mb-8">
           <p className="text-sm font-mono text-gray-500 mb-1">{'// career path'}</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
             Work <span className="gradient-text">Experience</span>
           </h2>
         </motion.div>
@@ -46,7 +46,7 @@ export default function ExperienceSection() {
           {/* Vertical line */}
           <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gray-200 hidden md:block" />
 
-          <div className="space-y-4">
+          <div className="space-y-4 pb-16 md:pb-0">
             {experiencesData.map((experience, index) => (
               <motion.div
                 key={index}
@@ -95,7 +95,7 @@ export default function ExperienceSection() {
                   </div>
 
                   {/* Description styled as log output */}
-                  <div className="bg-gray-900 rounded-lg px-4 py-3 font-mono text-xs">
+                  <div className="bg-gray-900 rounded-lg px-3 sm:px-4 py-3 font-mono text-[11px] sm:text-xs">
                     <span className="text-gray-500">{'> '}</span>
                     <span className="text-gray-300">{experience.description}</span>
                   </div>

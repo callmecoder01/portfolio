@@ -52,10 +52,10 @@ export default function ProjectsSection() {
         className="relative z-10 max-w-7xl mx-auto w-full"
       >
         {/* Section Header */}
-        <motion.div variants={itemVariants} className="flex items-end justify-between mb-8">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <p className="text-sm font-mono text-gray-500 mb-1">{'// recent work'}</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
               Featured <span className="gradient-text">Projects</span>
             </h2>
           </div>
@@ -147,7 +147,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Page dots */}
-        <motion.div variants={itemVariants} className="flex justify-center gap-2 mt-6">
+        <motion.div variants={itemVariants} className="flex justify-center gap-2 mt-6 mb-16 md:mb-0">
           {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}

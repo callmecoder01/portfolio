@@ -63,7 +63,7 @@ export default function ContactSection() {
         {/* Section Header */}
         <motion.div variants={itemVariants} className="mb-8">
           <p className="text-sm font-mono text-gray-500 mb-1">{'// lets connect'}</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
             Get In <span className="gradient-text">Touch</span>
           </h2>
         </motion.div>
@@ -86,7 +86,7 @@ export default function ContactSection() {
                 </div>
 
                 {/* Form inside terminal */}
-                <form onSubmit={handleSubmit} className="p-5 space-y-4">
+                <form onSubmit={handleSubmit} className="p-4 sm:p-5 space-y-3 sm:space-y-4">
                   <div>
                     <label className="text-xs font-mono text-gray-500 mb-1.5 block">
                       <span className="text-purple-400">const</span> name <span className="text-gray-600">=</span>
@@ -158,7 +158,7 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Right: Contact info */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 pb-16 md:pb-0">
             {/* Contact details */}
             {contactInfo.map(({ icon: Icon, label, value, href }) => (
               <motion.a

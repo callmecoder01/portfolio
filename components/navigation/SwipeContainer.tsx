@@ -7,12 +7,13 @@ interface SwipeContainerProps {
   children: ReactNode[];
 }
 
+const sectionLabels = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'];
+
 export default function SwipeContainer({ children }: SwipeContainerProps) {
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState(0);
   const totalSections = children.length;
 
-  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' && currentSection < totalSections - 1) {
@@ -24,7 +25,6 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
       }
     };
 
-    // Handle custom navigation events
     const handleNavigate = ((e: CustomEvent) => {
       const targetSection = e.detail.section;
       if (targetSection >= 0 && targetSection < totalSections) {
@@ -40,7 +40,6 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
       window.removeEventListener('navigateToSection', handleNavigate);
     };
   }, [currentSection, totalSections]);
-
 
   const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
@@ -97,9 +96,9 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
         </motion.div>
       </AnimatePresence>
 
-      {/* Section Indicators */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-4 text-sm font-medium">
-        {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'].map((label, index) => (
+      {/* Desktop: Text labels on right */}
+      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-4 text-sm font-medium">
+        {sectionLabels.map((label, index) => (
           <button
             key={label}
             onClick={() => {
@@ -114,6 +113,25 @@ export default function SwipeContainer({ children }: SwipeContainerProps) {
           >
             {label}
           </button>
+        ))}
+      </div>
+
+      {/* Mobile: Dots at bottom */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex md:hidden items-center gap-2 px-3 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 shadow-lg">
+        {sectionLabels.map((label, index) => (
+          <button
+            key={label}
+            onClick={() => {
+              setDirection(index > currentSection ? 1 : -1);
+              setCurrentSection(index);
+            }}
+            className={`rounded-full transition-all duration-300 ${
+              index === currentSection
+                ? 'w-6 h-2 bg-primary-500'
+                : 'w-2 h-2 bg-gray-300 active:bg-primary-400'
+            }`}
+            aria-label={label}
+          />
         ))}
       </div>
     </div>

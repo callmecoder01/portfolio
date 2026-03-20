@@ -93,7 +93,7 @@ export default function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-5"
+          className="space-y-4 sm:space-y-5 pb-16 md:pb-0"
         >
           {/* Status badge */}
           <motion.div variants={itemVariants}>
@@ -109,14 +109,14 @@ export default function HeroSection() {
           {/* Name */}
           <motion.div variants={itemVariants}>
             <p className="text-base text-gray-500 font-mono mb-1">{'// hello world'}</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 leading-tight">
               Saroj <span className="gradient-text">Sah</span>
             </h1>
           </motion.div>
 
           {/* Typing role */}
           <motion.div variants={itemVariants} className="h-10">
-            <p className="text-xl md:text-2xl font-mono text-gray-600">
+            <p className="text-lg sm:text-xl md:text-2xl font-mono text-gray-600">
               {'> '}
               <span className="text-primary-600 font-semibold">{text}</span>
               <span className={`inline-block w-0.5 h-6 ml-0.5 bg-primary-500 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />

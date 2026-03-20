@@ -47,9 +47,9 @@ export default function AboutSection() {
         className="relative z-10 max-w-7xl mx-auto w-full"
       >
         {/* Section Header */}
-        <motion.div variants={itemVariants} className="mb-8">
+        <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
           <p className="text-sm font-mono text-gray-500 mb-1">{'// get to know me'}</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
             About <span className="gradient-text">Me</span>
           </h2>
         </motion.div>
@@ -71,7 +71,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Code content */}
-                <div className="p-4 font-mono text-sm space-y-1">
+                <div className="p-3 sm:p-4 font-mono text-xs sm:text-sm space-y-1 overflow-x-auto no-scrollbar">
                   <div className="text-purple-400">{'{'}</div>
                   {aboutCode.map((line, i) => (
                     <motion.div
@@ -125,7 +125,7 @@ export default function AboutSection() {
             </motion.div>
 
             {/* Stats */}
-            <motion.div variants={itemVariants} className="bg-gray-900 rounded-xl p-5 border border-gray-700/50">
+            <motion.div variants={itemVariants} className="bg-gray-900 rounded-xl p-5 border border-gray-700/50 mb-16 md:mb-0">
               <div className="flex items-center gap-2 mb-4">
                 <FiGitBranch className="w-4 h-4 text-green-400" />
                 <span className="text-xs font-mono text-gray-400">stats --summary</span>

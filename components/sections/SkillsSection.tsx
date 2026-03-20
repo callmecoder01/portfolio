@@ -74,13 +74,13 @@ export default function SkillsSection() {
         {/* Section Header */}
         <motion.div variants={itemVariants} className="mb-8">
           <p className="text-sm font-mono text-gray-500 mb-1">{'// tech stack'}</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>
 
         {/* Skills grid as terminal cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {skillCategories.map((category) => (
             <motion.div
               key={category.title}
@@ -126,11 +126,11 @@ export default function SkillsSection() {
         {/* Bottom bar */}
         <motion.div
           variants={itemVariants}
-          className="mt-6 flex items-center justify-between px-4 py-3 bg-gray-900 rounded-xl border border-gray-700/50 font-mono text-xs"
+          className="mt-6 flex items-center justify-between px-3 sm:px-4 py-3 bg-gray-900 rounded-xl border border-gray-700/50 font-mono text-xs mb-16 md:mb-0"
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
             <span className="text-green-400">$</span>
-            <span className="text-gray-400">Currently exploring</span>
+            <span className="text-gray-400">Exploring</span>
             <span className="text-purple-400 font-semibold">Cloud Architecture</span>
             <span className="text-gray-500">&</span>
             <span className="text-purple-400 font-semibold">AI/ML</span>
